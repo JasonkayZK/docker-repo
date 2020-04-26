@@ -33,7 +33,6 @@ docker network create --subnet 172.30.1.0/16 --gateway 172.30.0.1 kafka
 | kafka1        | 172.30.1.11 | 9092:9092 |
 | kafka2        | 172.30.1.12 | 9093:9093 |
 | kafka3        | 172.30.1.13 | 9094:9094 |
-| kafka-manager | 172.30.2.11 | 9000:9000 |
 
 ### Zookeeper集群
 
