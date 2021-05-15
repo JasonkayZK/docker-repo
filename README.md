@@ -1,22 +1,19 @@
 ## Docker Repo
 
-A repository stores some dockerfiles or docker-compose files for quickly starting cluster.
+A repository stores some dockerfiles or docker-compose files for quickly starting service or service cluster.
 
-### About Dockerfile
+一个使用Dockerfile和Docker-Compose快速搭建各种服务组件或服务组件集群的仓库；
 
-Official: 
+About Dockerfile：
 
--   [DockerFile Official Doc](https://docs.docker.com/engine/reference/builder/)
+-   Official：[DockerFile Official Doc](https://docs.docker.com/engine/reference/builder/)
+-   Blog：[Dockerfile学习](https://jasonkayzk.github.io/2019/10/16/Dockerfile%E5%AD%A6%E4%B9%A0/)
 
-Blog:
+About Docker-Compose：
 
--   [Dockerfile学习](https://jasonkayzk.github.io/2019/10/16/Dockerfile%E5%AD%A6%E4%B9%A0/)
+-   Official：[Docker-Compose Official Doc](https://docs.docker.com/compose/)
 
-### About Docker-Compose
-
-Official:
-
--   [Docker-Compose Official Doc](https://docs.docker.com/compose/)
+<br/>
 
 ### Finished
 
