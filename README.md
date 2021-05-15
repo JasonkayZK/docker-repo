@@ -19,7 +19,7 @@
 >
 >   -   https://github.com/JasonkayZK/docker_repo/tree/elk-v7.1-single
 
-
+<br/>
 
 ### 项目环境
 
@@ -31,7 +31,7 @@
 -   ELK Version：7.1.0
 -   Filebeat：7.1.0
 
-
+<br/>
 
 ### 项目说明
 
@@ -45,7 +45,7 @@
 ES_VERSION=7.1.0
 ```
 
-
+<br/>
 
 #### Docker-Compose服务配置
 
@@ -117,6 +117,8 @@ services:
 -   kibana；
 -   filebeat；
 
+<br/>
+
 ##### ElasticSearch服务
 
 在elasticsearch服务的配置中有几点需要特别注意：
@@ -140,7 +142,7 @@ services:
 >   -   [Caused by: java.nio.file.AccessDeniedException: /usr/share/elasticsearch/data/nodes](https://www.google.com/search?q=Caused+by%3A+java.nio.file.AccessDeniedException%3A+%2Fusr%2Fshare%2Felasticsearch%2Fdata%2Fnodes&sxsrf=ALeKk02j1--iGkUZ432Y7Hh1ggXe7FPU1A%3A1621041287165&ei=hyCfYNbGCZDQ-wT9hJCoCw&oq=Caused+by%3A+java.nio.file.AccessDeniedException%3A+%2Fusr%2Fshare%2Felasticsearch%2Fdata%2Fnodes&gs_lcp=Cgdnd3Mtd2l6EAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsAMyBwgAEEcQsANQ2_gPWNv4D2Cz-g9oAHAFeACAAQCIAQCSAQCYAQGgAQKgAQGqAQdnd3Mtd2l6yAEIwAEB&sclient=gws-wiz&ved=0ahUKEwiWptmwwcrwAhUQ6J4KHX0CBLUQ4dUDCA4&uact=5)
 >   -   https://techoverflow.net/2020/04/18/how-to-fix-elasticsearch-docker-accessdeniedexception-usr-share-elasticsearch-data-nodes/
 
-
+<br/>
 
 ##### **LogStash服务**
 
@@ -181,7 +183,7 @@ output {
 
 在这里我们将原来tcp收集方式修改为由filebeat上报，同时固定了索引为`test`；
 
-
+<br/>
 
 ##### **Kibana服务**
 
@@ -190,7 +192,7 @@ output {
 -   `ELASTICSEARCH_URL=http://elasticsearch:9200`：配置ES的地址；
 -   `/etc/localtime:/etc/localtime`：Docker容器中时间和宿主机同步；
 
-
+<br/>
 
 ##### **Filebeat服务**
 
@@ -245,7 +247,7 @@ processors:
 
 上面给出了一个filebeat配置文件示例，实际使用时可以根据需求进行修改；
 
-
+<br/>
 
 ### 使用方法
 
@@ -331,7 +333,7 @@ docker logs -f docker_repo_filebeat_1
 
 监控成功！
 
-
+<br/>
 
 ### 测试
 
@@ -357,7 +359,7 @@ docker logs -f docker_repo_filebeat_1
 
 可以看到Filebeat成功收集到了日志！
 
-
+<br/>
 
 #### 在Kibana中查看
 
@@ -381,7 +383,7 @@ docker logs -f docker_repo_filebeat_1
 
 至此，整个ELK Stack的功能测试完毕，尽情享用吧！
 
-
+<br/>
 
 ### 其他
 
