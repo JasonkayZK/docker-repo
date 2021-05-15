@@ -19,7 +19,7 @@ services:
         volumes:
             - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
         ports:
-            - "4560:4560"
+            - "5044:5044"
         links:
             - elasticsearch
 

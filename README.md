@@ -11,7 +11,7 @@
 
 **注：本分支仅仅采用通常的ElasticSearch + LogStash + Kibana组件，而未使用FileBeat；**
 
-
+<br/>
 
 ### 项目说明
 
@@ -49,7 +49,7 @@ services:
         volumes:
             - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
         ports:
-            - "4560:4560"
+            - "5044:5044"
         links:
             - elasticsearch
 
@@ -112,7 +112,7 @@ input {
   tcp {
     mode => "server"
     host => "0.0.0.0"
-    port => 4560
+    port => 5044
     codec => json
   }
 }
@@ -126,7 +126,7 @@ output {
 }
 ```
 
-
+<br/>
 
 ### 使用方法
 
@@ -175,7 +175,7 @@ Creating docker_repo_logstash_1      ... done
 
 ![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo_2.png)
 
-
+<br/>
 
 ### 测试
 
@@ -281,7 +281,7 @@ curl -XGET "http://127.0.0.1:9200/ik_v2/chinese/3?pretty"
 
 可以看到，username已经成功被修改！
 
-
+<br/>
 
 #### 在Kibana中查看
 
@@ -297,7 +297,7 @@ curl -XGET "http://127.0.0.1:9200/ik_v2/chinese/3?pretty"
 
 大体单节点的ELK就部署成功，可以使用了！
 
-
+<br/>
 
 ### 其他
 
