@@ -1,0 +1,34 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      # 目录下的所有.log文件
+      - /usr/share/filebeat/logs/*.log
+    multiline.pattern: ^\[
+    multiline.negate: true
+    multiline.match: after
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 1
+
+setup.dashboards.enabled: false
+
+setup.kibana:
+  host: "http://kibana:5601"
+
+# 直接传输至ES
+#output.elasticsearch:
+# hosts: ["http://es-master:9200"]
+# index: "filebeat-%{[beat.version]}-%{+yyyy.MM.dd}"
+
+# 传输至LogStash
+output.logstash:
+  hosts: ["logstash:5044"]
+
+processors:
+  - add_host_metadata: ~
+  - add_cloud_metadata: ~

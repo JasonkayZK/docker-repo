@@ -1,6 +1,6 @@
 version: '3.4'
 
-services: 
+services:
     elasticsearch:
         image: "docker.elastic.co/elasticsearch/elasticsearch:${ES_VERSION}"
         environment:
@@ -19,7 +19,7 @@ services:
         volumes:
             - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
         ports:
-            - "4560:4560"
+            - "5044:5044"
         links:
             - elasticsearch
 
@@ -35,3 +35,20 @@ services:
             - "5601:5601"
         links:
             - elasticsearch
+
+    filebeat:
+        depends_on:
+            - elasticsearch
+            - logstash
+        image: "docker.elastic.co/beats/filebeat:${ES_VERSION}"
+        user: root # 必须为root
+        environment:
+            - strict.perms=false
+        volumes:
+            - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+            # 映射到容器中[作为数据源]
+            - /docker_es/filebeat/logs:/usr/share/filebeat/logs:rw
+            - /docker_es/filebeat/data:/usr/share/filebeat/data:rw
+        # 将指定容器连接到当前连接，可以设置别名，避免ip方式导致的容器重启动态改变的无法连接情况
+        links:
+            - logstash
