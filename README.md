@@ -169,11 +169,11 @@ Creating docker_repo_logstash_1      ... done
 
 在portainer中可以看到三个容器全部被成功创建：
 
-![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo1.png)
+![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo_1.png)
 
 访问`<ip>:5601/`可以看到Kibana也成功启动：
 
-![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo2.png)
+![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo_2.png)
 
 
 
@@ -289,11 +289,11 @@ curl -XGET "http://127.0.0.1:9200/ik_v2/chinese/3?pretty"
 
 在Management中点击`Kibana`下面的`Index Management`，并输入上面我们插入的索引`ik_v2`：
 
-![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo3.png)
+![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo_3.png)
 
 创建成功后可以在`Discover`中查看：
 
-![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo4.png)
+![](https://cdn.jsdelivr.net/gh/jasonkayzk/docker_repo@elk-v7.1-single/images/demo_4.png)
 
 大体单节点的ELK就部署成功，可以使用了！
 
