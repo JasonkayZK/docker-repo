@@ -1,3 +1,5 @@
+## Docker Repo
+
 A repository stores some dockerfiles or docker-compose files for quickly starting cluster.
 
 ### About Dockerfile
@@ -18,7 +20,7 @@ Official:
 
 ### Finished
 
-| Iamge                                                        | Date       | Info                  | Note                                            |
+| Image                                                        | Date       | Info                  | Note                                            |
 | ------------------------------------------------------------ | ---------- | --------------------- | ----------------------------------------------- |
 | [zookeeper-v3.4-cluster](https://github.com/JasonkayZK/docker_repo/tree/zookeeper-v3.4-cluster) | 2020-04-26 | zookeeper-3.4 cluster | 3 or more nodes                                 |
 | [kafka-v2.4.1-cluster](https://github.com/JasonkayZK/docker_repo/tree/kafka-v2.4.1-cluster) | 2020-04-26 | kafka-v2.4.1-cluster  | zookeeper cluster & kafka cluster               |
