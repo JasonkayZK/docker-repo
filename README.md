@@ -49,7 +49,7 @@ version: '3.4'
 
 services: 
     kafka1:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka1
         container_name: kafka1
@@ -73,7 +73,7 @@ services:
             zoo3: 172.30.0.13
 
     kafka2:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka2
         container_name: kafka2
@@ -97,7 +97,7 @@ services:
             zoo3: 172.30.0.13
 
     kafka3:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka3
         container_name: kafka3
@@ -190,7 +190,7 @@ services:
                 ipv4_address: 172.30.0.13
 
     kafka1:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka1
         container_name: kafka1
@@ -222,7 +222,7 @@ services:
             - zoo3
 
     kafka2:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka2
         container_name: kafka2
@@ -254,7 +254,7 @@ services:
             - zoo3           
 
     kafka3:
-        image: wurstmeister/kafka
+        image: wurstmeister/kafka:2.12-2.4.1
         restart: always
         hostname: kafka3
         container_name: kafka3
