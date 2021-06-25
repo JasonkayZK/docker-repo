@@ -23,5 +23,6 @@ About Docker-Compose：
 | [kafka-v2.4.1-cluster](https://github.com/JasonkayZK/docker_repo/tree/kafka-v2.4.1-cluster) | 2020-04-26 | kafka-v2.4.1-cluster    | zookeeper cluster & kafka cluster                       |
 | [elk-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-v7.1-single) | 2021-05-15 | ELK-v7.1.0-single       | Compose ELK Single-Node<br />(Without Filebeat)         |
 | [elk-stack-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-stack-v7.1-single) | 2021-05-15 | ELK-Stack-v7.1.0-single | Compose ELK Single-Node<br />(Full-Stack with Filebeat) |
+| [hadoop-v2.7-single](https://github.com/JasonkayZK/docker_repo/tree/hadoop-v2.7-single) | 2021-06-25 | Hadoop-v2.7-Single      | Directly run with Docker                                |
 |                                                              |            |                         |                                                         |
 
