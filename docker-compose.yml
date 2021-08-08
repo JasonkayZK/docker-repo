@@ -1,1 +1,60 @@
-version: '3.4'
+version: '3.6'
+services:
+  server:
+    image: redash/redash:8.0.2.b37747
+    command: server
+    depends_on:
+      - redash_postgres
+      - redash_redis
+    ports:
+      - "15000:5000"
+    networks:
+      - redash
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      PYTHONUNBUFFERED: 0
+      REDASH_LOG_LEVEL: "INFO"
+      REDASH_REDIS_URL: "redis://redash_redis:6379/0"
+      REDASH_DATABASE_URL: "postgresql://postgres:123456@redash_postgres/postgres"
+      REDASH_COOKIE_SECRET: "123456"
+      REDASH_WEB_WORKERS: 4
+
+  worker:
+    image: redash/redash:8.0.2.b37747
+    command: scheduler
+    networks:
+      - redash
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      PYTHONUNBUFFERED: 0
+      REDASH_LOG_LEVEL: "INFO"
+      REDASH_REDIS_URL: "redis://redash_redis:6379/0"
+      REDASH_DATABASE_URL: "postgresql://postgres:123456@redash_postgres/postgres"
+      QUEUES: "queries,scheduled_queries,celery"
+      REDASH_COOKIE_SECRET: "123456"
+      WORKERS_COUNT: 2
+
+  redash_redis:
+    image: redis:6.2.4
+    networks:
+      - redash
+    deploy:
+      mode: replicated
+      replicas: 1
+  redash_postgres:
+    image: postgres:13.3
+    networks:
+      - redash
+    environment:
+      POSTGRES_PASSWORD: 123456
+    deploy:
+      mode: replicated
+      replicas: 1
+
+networks:
+  redash:
+    name: redash
