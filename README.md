@@ -1,29 +1,28 @@
-## Docker Repo
+# **Hadoop Cluster**
 
-A repository stores some dockerfiles or docker-compose files for quickly starting service or service cluster.
-
-一个使用Dockerfile和Docker-Compose快速搭建各种服务组件或服务组件集群的仓库；
-
-About Dockerfile：
-
--   Official：[DockerFile Official Doc](https://docs.docker.com/engine/reference/builder/)
--   Blog：[Dockerfile学习](https://jasonkayzk.github.io/2019/10/16/Dockerfile%E5%AD%A6%E4%B9%A0/)
-
-About Docker-Compose：
-
--   Official：[Docker-Compose Official Doc](https://docs.docker.com/compose/)
+A branch for quickly starting the hadoop v3.1.3 cluster.
 
 <br/>
 
-### Finished
+## **使用**
 
-| Image                                                        | Date       | Info                    | Note                                                    |
-| ------------------------------------------------------------ | ---------- | ----------------------- | ------------------------------------------------------- |
-| [zookeeper-v3.4-cluster](https://github.com/JasonkayZK/docker_repo/tree/zookeeper-v3.4-cluster) | 2020-04-26 | zookeeper-3.4 cluster   | 3 or more nodes                                         |
-| [kafka-v2.4.1-cluster](https://github.com/JasonkayZK/docker_repo/tree/kafka-v2.4.1-cluster) | 2020-04-26 | kafka-v2.4.1-cluster    | zookeeper cluster & kafka cluster                       |
-| [elk-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-v7.1-single) | 2021-05-15 | ELK-v7.1.0-single       | Compose ELK Single-Node<br />(Without Filebeat)         |
-| [elk-stack-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-stack-v7.1-single) | 2021-05-15 | ELK-Stack-v7.1.0-single | Compose ELK Single-Node<br />(Full-Stack with Filebeat) |
-| [hadoop-v2.7-single](https://github.com/JasonkayZK/docker_repo/tree/hadoop-v2.7-single) | 2021-06-25 | Hadoop-v2.7-Single      | Directly run with Docker                                |
-| [redash-single](https://github.com/JasonkayZK/docker_repo/tree/redash-single) | 2021-08-08 | Redash-v8               | Directly run Redash with Docker                         |
-|                                                              |            |                         |                                                         |
+直接在Shell执行：
 
+```bash
+docker-compose up -d
+```
+
+<br/>
+
+## **测试**
+
+
+
+
+<br/>
+
+## 相关文章
+
+Github Pages：[使用Docker部署单节点Hadoop](https://jasonkayzk.github.io/2021/08/21/从零开始搭建大数据镜像-1/)
+
+国内Gitee镜像：[使用Docker部署单节点Hadoop](https://jasonkay.gitee.io/2021/08/21/从零开始搭建大数据镜像-1/)

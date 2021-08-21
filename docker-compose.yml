@@ -1,1 +1,50 @@
 version: '3.4'
+
+services:
+  big-data-1:
+    image: jasonkay/big-data-1:v1.0
+    hostname: big-data-1
+    container_name: big-data-1
+    privileged: true
+    links:
+      - big-data-2
+      - big-data-3
+    depends_on:
+      - big-data-2
+      - big-data-3
+    ports:
+      - 19870:9870
+      - 22
+    command: bash -c "/usr/sbin/init && /root/bin/hdp.sh start"
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.11
+
+  big-data-2:
+    image: jasonkay/big-data-2:v1.0
+    hostname: big-data-2
+    container_name: big-data-2
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 22
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.12
+
+  big-data-3:
+    image: jasonkay/big-data-3:v1.0
+    hostname: big-data-3
+    container_name: big-data-3
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 22
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.13
+
+networks:
+  big-data:
+    external:
+      name: big-data
