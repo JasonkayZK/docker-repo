@@ -58,10 +58,13 @@ i am a programmer
 ```bash
 # 创建/input目录
 hdfs dfs -mkdir /input 
+
 # 写入hdfs
 hdfs dfs -put data.txt /input 
+
 # 查看HDFS
 hdfs dfs -ls /input
+
 Found 1 items
 -rw-r--r--   1 root supergroup         62 2021-08-18 06:42 /input/data.txt
 ```
@@ -70,6 +73,7 @@ Word Count测试：
 
 ```bash
 cd /opt/module/hadoop-3.1.3/share/hadoop/mapreduce/
+
 hadoop jar hadoop-mapreduce-examples-3.1.3.jar wordcount /input/data.txt /output
 ```
 
@@ -98,6 +102,6 @@ programmer      1
 
 ## 相关文章
 
-Github Pages：[使用Docker部署单节点Hadoop](https://jasonkayzk.github.io/2021/08/21/从零开始搭建大数据镜像-1/)
+Github Pages：[从零开始搭建大数据镜像-1](https://jasonkayzk.github.io/2021/08/21/从零开始搭建大数据镜像-1/)
 
-国内Gitee镜像：[使用Docker部署单节点Hadoop](https://jasonkay.gitee.io/2021/08/21/从零开始搭建大数据镜像-1/)
+国内Gitee镜像：[从零开始搭建大数据镜像-1](https://jasonkay.gitee.io/2021/08/21/从零开始搭建大数据镜像-1/)
