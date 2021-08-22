@@ -13,9 +13,9 @@ services:
       - big-data-2
       - big-data-3
     ports:
-      - 19870:9870
+      - 9870:9870
       - 22
-    command: bash -c "/usr/sbin/init && /root/bin/hdp.sh start"
+    entrypoint: ["/usr/sbin/init"]
     networks:
       big-data:
         ipv4_address: 172.30.0.11

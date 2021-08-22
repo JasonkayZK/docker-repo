@@ -37,6 +37,118 @@ docker exec -it big-data-1 /bin/bash
 
 <br/>
 
+### **使用Docker-Compose启动**
+
+编辑docker-compose.yml
+
+```yaml
+version: '3.4'
+
+services:
+  big-data-1:
+    image: jasonkay/big-data-1:v1.0
+    hostname: big-data-1
+    container_name: big-data-1
+    privileged: true
+    links:
+      - big-data-2
+      - big-data-3
+    depends_on:
+      - big-data-2
+      - big-data-3
+    ports:
+      - 9870:9870
+      - 22
+    entrypoint: ["/usr/sbin/init"]
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.11
+
+  big-data-2:
+    image: jasonkay/big-data-2:v1.0
+    hostname: big-data-2
+    container_name: big-data-2
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 22
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.12
+
+  big-data-3:
+    image: jasonkay/big-data-3:v1.0
+    hostname: big-data-3
+    container_name: big-data-3
+    privileged: true
+    entrypoint: ["/usr/sbin/init"]
+    ports:
+      - 22
+    networks:
+      big-data:
+        ipv4_address: 172.30.0.13
+
+networks:
+  big-data:
+    external:
+      name: big-data
+```
+
+启动三个节点：
+
+```bash
+[root@localhost docker-repo]# docker-compose  up -d
+Creating big-data-3 ... done
+Creating big-data-2 ... done
+Creating big-data-1 ... done
+```
+
+进入`big-data-1`启动集群：
+
+```bash
+[root@big-data-1 bin]# ./hdp.sh start
+ =================== Start  Hadoop Cluster ===================
+ --------------- Start hdfs ---------------
+Starting namenodes on [big-data-1]
+Last login: Wed Aug 18 04:48:01 UTC 2021
+Starting datanodes
+Last login: Sun Aug 22 08:13:26 UTC 2021
+Starting secondary namenodes [big-data-3]
+Last login: Sun Aug 22 08:13:28 UTC 2021
+ --------------- Start yarn ---------------
+Starting resourcemanager
+Last login: Wed Aug 18 04:47:56 UTC 2021
+Starting nodemanagers
+Last login: Sun Aug 22 08:13:35 UTC 2021
+ --------------- Start historyserver ---------------
+```
+
+查看状态：
+
+```bash
+[root@big-data-1 ~]# ./xcall.sh jps
+--------- big-data-1 ----------
+1137 Jps
+811 NodeManager
+940 JobHistoryServer
+492 DataNode
+271 NameNode
+--------- big-data-2 ----------
+694 NodeManager
+317 ResourceManager
+142 DataNode
+1054 Jps
+--------- big-data-3 ----------
+145 DataNode
+229 SecondaryNameNode
+518 Jps
+316 NodeManager
+```
+
+启动成功！
+
+<br/>
+
 ## **测试**
 
 数据准备：
