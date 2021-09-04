@@ -10,5 +10,5 @@ services:
       - AUTO_UPDATE=true
       - EMAIL=your_email_address
       - PASSWORD=your_password # 2FA Closed!
-      - RUN_AT=23:00
-      - ONCE=true
+      - RUN_AT=23:00 # Run everyday
+      - ONCE=false
