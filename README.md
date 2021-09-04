@@ -26,5 +26,6 @@ About Docker-Compose：
 | [hadoop-v2.7-single](https://github.com/JasonkayZK/docker_repo/tree/hadoop-v2.7-single) | 2021-06-25 | Hadoop-v2.7-Single      | Directly run with Docker                                |
 | [redash-single](https://github.com/JasonkayZK/docker_repo/tree/redash-single) | 2021-08-08 | Redash-v8               | Directly run Redash with Docker                         |
 | [hadoop-3.1.3-cluster](https://github.com/JasonkayZK/docker_repo/tree/hadoop-3.1.3-cluster) | 2021-08-21 | Hadoop-3.1.3-cluster    | Run Hadoop-3.1.3 cluster with Docker                    |
+| [epic-games-claimer](https://github.com/JasonkayZK/docker_repo/tree/epic-games-claimer) | 2021-09-04 | Epic-game-claimer       | Auto gain free epic game everyday                       |
 |                                                              |            |                         |                                                         |
 
