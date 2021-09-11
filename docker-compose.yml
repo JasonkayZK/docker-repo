@@ -7,10 +7,12 @@ services:
             - discovery.type=single-node
         volumes:
             - /etc/localtime:/etc/localtime
-            - /docker_es/data:/usr/share/elasticsearch/data
+            - elasticsearch:/usr/share/elasticsearch/data
         ports:
             - "9200:9200"
             - "9300:9300"
+        networks:
+            - elk
     
     logstash:
         depends_on:
@@ -22,6 +24,8 @@ services:
             - "5044:5044"
         links:
             - elasticsearch
+        networks:
+            - elk
 
     kibana:
         depends_on:
@@ -35,3 +39,16 @@ services:
             - "5601:5601"
         links:
             - elasticsearch
+        networks:
+            - elk
+volumes:
+  elasticsearch:
+    driver: local
+  logstash:
+    driver: local
+  kibana:
+    driver: local
+
+networks:
+  elk:
+    driver: bridge
