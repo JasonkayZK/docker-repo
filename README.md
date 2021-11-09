@@ -27,7 +27,7 @@ About Docker-Compose：
 | [redash-single](https://github.com/JasonkayZK/docker_repo/tree/redash-single) | 2021-08-08 | Redash-v8                   | Directly run Redash with Docker                              |
 | [hadoop-3.1.3-cluster](https://github.com/JasonkayZK/docker_repo/tree/hadoop-3.1.3-cluster) | 2021-08-21 | Hadoop-3.1.3-cluster        | Run Hadoop-3.1.3 cluster with Docker                         |
 | [epic-games-claimer](https://github.com/JasonkayZK/docker_repo/tree/epic-games-claimer) | 2021-09-04 | Epic-game-claimer           | Auto gain free epic game everyday                            |
-| [elk-v7.14-single](https://github.com/JasonkayZK/docker_repo/tree/elk-v7.14-single) | 2021-09-11 | ELK-Stack-v7.14.0-single    | Update ver[elk-stack-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-stack-v7.1-single)<br />Contributed by [wwhai](https://github.com/wwhai) |
+| [elk-v7.14-single](https://github.com/JasonkayZK/docker_repo/tree/elk-v7.14-single) | 2021-09-11 | ELK-Stack-v7.14.0-single    | Update version: [elk-stack-v7.1-single](https://github.com/JasonkayZK/docker_repo/tree/elk-stack-v7.1-single)<br />Contributed by [wwhai](https://github.com/wwhai) |
 | [mysql-federated](https://github.com/JasonkayZK/docker-repo/tree/mysql-federated) | 2021-11-09 | MySQL Federated Engine Demo | A demo to show how Federated Engine works in MySQL<br />Blog: [MySQL跨数据库查询方案总结](https://jasonkayzk.github.io/2021/11/09/MySQL跨数据库查询方案总结/) |
 |                                                              |            |                             |                                                              |
 
