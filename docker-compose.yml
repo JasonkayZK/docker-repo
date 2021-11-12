@@ -1,1 +1,59 @@
 version: '3.4'
+
+services:
+  mysql-1-master:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/master.cnf:/etc/mysql/conf.d/master.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+  mysql-1-slave:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/slave.cnf:/etc/mysql/conf.d/slave.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+
+  mysql-2-master:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/master.cnf:/etc/mysql/conf.d/master.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+  mysql-2-slave:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/slave.cnf:/etc/mysql/conf.d/slave.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+
+  mysql-3-master:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/master.cnf:/etc/mysql/conf.d/master.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+  mysql-3-slave:
+    image: mysql:5.7.36
+    volumes:
+      - ./mysql/conf/slave.cnf:/etc/mysql/conf.d/slave.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+
+  mycat:
+    image: jasonkay/mycat:1.6.7.5
+    volumes:
+      - ./mycat/rule.xml:/usr/local/mycat/conf/rule.xml
+      - ./mycat/schema.xml:/usr/local/mycat/conf/schema.xml
+      - ./mycat/server.xml:/usr/local/mycat/conf/server.xml
+    ports:
+      - "8066:8066"
+      - "9066:9066"
+    depends_on:
+      - mysql-1-master
+      - mysql-1-slave
+      - mysql-2-master
+      - mysql-2-slave
+      - mysql-3-master
+      - mysql-3-slave
+    restart: always

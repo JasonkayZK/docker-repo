@@ -1,0 +1,2 @@
+[mysqld]
+server-id=2       # 唯一服务器ID，非0整数，不能和其他服务器的server-id重复

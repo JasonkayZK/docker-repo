@@ -1,0 +1,3 @@
+[mysqld]
+log-bin=mysql-bin # 使用binary logging，mysql-bin是log文件名的前缀
+server-id=1       # 唯一服务器ID，非0整数，不能和其他服务器的server-id重复
