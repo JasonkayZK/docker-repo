@@ -2,7 +2,7 @@ version: '3'
 
 services:
   epic-auto:
-    image: luminoleon/epicgames-claimer:1.4.8
+    image: luminoleon/epicgames-claimer:latest
     container_name: epic-auto
     restart: unless-stopped
     environment:
