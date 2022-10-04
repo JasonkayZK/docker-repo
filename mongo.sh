@@ -1,0 +1,1 @@
+docker run -itd --restart=always --name my-mongo -p 37017:27017 mongo:5.0.10 --auth
