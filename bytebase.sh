@@ -1,0 +1,1 @@
+docker run --init -itd --name bytebase --restart always -p 15678:8080 --add-host host.docker.internal:host-gateway --health-cmd "curl --fail http://localhost:8080/healthz || exit 1" -v /root/data/docker-volumn/bytebase/data:/var/opt/bytebase --health-interval 5m --health-timeout 60s bytebase/bytebase:1.7.0 --data /var/opt/bytebase --port 8080
