@@ -1,0 +1,1 @@
+docker run -itd --restart=always --name my-memos -p 15230:5230 neosmemo/memos:0.9.0
