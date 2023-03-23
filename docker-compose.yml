@@ -1,1 +1,37 @@
-version: '3.4'
+version: "3.4"
+
+services:
+  zookeeper:
+    image: zookeeper:3.4.13
+    restart: always
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      dubbo2:
+        ipv4_address: 172.30.0.10
+
+  dubbo-admin:
+    image: apache/dubbo-admin:0.5.0
+    depends_on:
+      - zookeeper
+    restart: always
+    hostname: dubbo-admin
+    container_name: dubbo-admin
+    environment:
+      "admin.root.user.name": "root"
+      "admin.root.user.password": "123456"
+      "admin.registry.address": "zookeeper://zookeeper:2181"
+      "admin.config-center": "zookeeper://zookeeper:2181"
+      "admin.metadata-report.address": "zookeeper://zookeeper:2181"
+    ports:
+      - "19600:8080"
+    networks:
+      dubbo2:
+        ipv4_address: 172.30.0.11
+
+networks:
+  dubbo2:
+    external:
+      name: dubbo2
