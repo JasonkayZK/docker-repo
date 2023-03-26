@@ -1,0 +1,7 @@
+[mysqld]
+log-bin=mysql-bin # 添加这一行就ok
+binlog-format=ROW # 选择row模式
+server_id=1 # 配置mysql replaction需要定义，不能和canal的slaveId重复
+
+# 配置表名字不区分大小写
+lower_case_table_names=1

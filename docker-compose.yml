@@ -1,1 +1,23 @@
 version: '3.4'
+
+services:
+  mysql:
+    image: 'mysql:5.7.8'
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "13306:3306"
+    volumes:
+      - ./config/mysqld.cnf:/etc/mysql/conf.d/mysqld.cnf
+
+  canal:
+    image: 'canal/canal-server:v1.1.6'
+    restart: always
+    user: root
+    depends_on:
+      - mysql
+    ports:
+      - "11111:11111"
+#    volumes:
+#      - ./config/instance.properties:/home/admin/canal-server/conf/example/instance.properties
