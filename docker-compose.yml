@@ -1,1 +1,35 @@
 version: '3.4'
+
+services:
+  server1:
+    image: jasonkay/ansible-managed-node:ubuntu-20.04-arm
+    restart: always
+    hostname: server1
+    ports:
+      - "2221:22/tcp"
+    networks:
+      ansible:
+        ipv4_address: 172.34.0.11
+  server2:
+    image: jasonkay/ansible-managed-node:ubuntu-20.04-arm
+    restart: always
+    hostname: server2
+    ports:
+      - "2222:22/tcp"
+    networks:
+      ansible:
+        ipv4_address: 172.34.0.12
+  server3:
+    image: jasonkay/ansible-managed-node:ubuntu-20.04-arm
+    restart: always
+    hostname: server3
+    ports:
+      - "2223:22/tcp"
+    networks:
+      ansible:
+        ipv4_address: 172.34.0.13
+
+networks:
+  ansible:
+    external:
+      name: ansible

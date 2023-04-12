@@ -1,0 +1,1 @@
+docker build -t jasonkay/ansible-managed-node:ubuntu-20.04-arm .

@@ -1,0 +1,1 @@
+docker network create --subnet 172.34.0.0/24 --gateway 172.34.0.1 ansible
