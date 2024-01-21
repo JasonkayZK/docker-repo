@@ -34,4 +34,15 @@ docker run -itd --restart=always \
   -v $DOLT_HOME/databases:/var/lib/dolt \
   dolthub/dolt-sql-server:1.32.0
 
-# Change config need restart the container...
+# Change config need restart the container...!
+docker exec -it my-dolt /bin/bash
+
+# Add config
+dolt config --global --set user.name "jasonkayzk"
+dolt config --global --set user.email "jasonkayzk@gmail.com"
+dolt login # set creds
+
+# Restart container
+docker restart my-dolt
+
+
