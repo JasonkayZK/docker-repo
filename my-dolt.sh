@@ -3,6 +3,7 @@ export DOLT_HOME=/root/workspace/dolt
 mkdir -p $DOLT_HOME
 mkdir -p $DOLT_HOME/server-conf
 
+# Write config, see more: https://docs.dolthub.com/sql-reference/server/configuration
 cat > $DOLT_HOME/server-conf/config.yaml << EOF
 log_level: info
 
