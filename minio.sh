@@ -1,6 +1,7 @@
 mkdir -p /mnt/minio-data
 
-docker run \
+docker run -itd \
+   --restart=always \
    -p 9000:9000 \
    -p 9001:9001 \
    --name minio \
