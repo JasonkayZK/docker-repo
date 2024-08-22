@@ -32,5 +32,6 @@ About Docker-Compose：
 | [dubbo-admin](https://github.com/JasonkayZK/docker-repo/tree/dubbo-admin) | 2023-03-23 | Dubbo Admin v0.5.0              | Run Dubbo Admin & Zookeeper with Docker                      |
 | [canal](https://github.com/JasonkayZK/docker-repo/tree/canal) | 2023-03-26 | Canal v1.1.6                    | Run Canal & MySQL with docker-compose<br />Blog: [《Java订阅Binlog的几种方式》](https://jasonkayzk.github.io/2023/03/26/Java订阅Binlog的几种方式/) |
 | [ansible](https://github.com/JasonkayZK/docker-repo/tree/ansible) | 2023-04-12 | Ubuntu 20.04 ARM/AMD64 with ssh | Run Ansible managed node cluster                             |
+| [talebook](https://github.com/JasonkayZK/docker-repo/tree/talebook) | 2024-08-22 | talebook v3.8.1 & douban-api-rs | A branch to deloy [talebook](https://github.com/talebook/talebook) & [douban-rs-api ](https://github.com/cxfksword/douban-api-rs) stack |
 |                                                              |            |                                 |                                                              |
 
