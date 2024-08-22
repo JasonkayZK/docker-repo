@@ -1,1 +1,0 @@
-docker run -itd   -e BOOT_OPTIONS="--server.port=18080" --name nginxwebui --restart=always --privileged=true  --net=host  cym1102/nginxwebui:latest
