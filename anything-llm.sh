@@ -3,6 +3,7 @@ mkdir -p $STORAGE_LOCATION && \
 chmod -R 0777 $STORAGE_LOCATION && \
 touch "$STORAGE_LOCATION/.env" && \
 docker run -d -p 3001:3001 \
+--restart=unless-stopped \
 --name my-anything-llm \
 --cap-add SYS_ADMIN \
 -v ${STORAGE_LOCATION}:/app/server/storage \
