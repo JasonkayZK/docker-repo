@@ -53,3 +53,7 @@ If you don't know how to use the repository above, just modify the `images.txt` 
 And i will provide the image urls for you!
 
 > And the images in this repo's scripts will be all replaced to my own Aliyun.
+>
+> For how-to:
+>    - [《通过GithubActions拉取并推送Docker镜像到国内云》](https://jasonkayzk.github.io/2025/01/30/%E9%80%9A%E8%BF%87GithubActions%E6%8B%89%E5%8F%96%E5%B9%B6%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0%E5%9B%BD%E5%86%85%E4%BA%91/)
+
