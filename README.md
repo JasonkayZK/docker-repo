@@ -1,4 +1,4 @@
-## Docker Repo
+# **Docker Repo**
 
 A repository stores some dockerfiles or docker-compose files for quickly starting service or service cluster.
 
@@ -15,7 +15,7 @@ About Docker-Compose：
 
 <br/>
 
-### Finished
+## **Finished**
 
 | Image                                                        | Date       | Info                                                         | Note                                                         |
 | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -36,3 +36,20 @@ About Docker-Compose：
 | [milvus-standalone](https://github.com/JasonkayZK/docker-repo/tree/milvus-standalone) | 2025-01-29 | [milvus](https://github.com/milvus-io/milvus) standalone version | A branch to deploy [milvus](https://github.com/milvus-io/milvus) standalone |
 |                                                              |            |                                                              |                                                              |
 
+<br/>
+
+## **Notice**
+
+For some obvious policy reasons, DockerHub is prohibited in some places. 🚫 
+
+But nowadays using docker images is inevitable!
+
+One ideal way to solve this issue is to create a mirror site.
+
+Here i used [tech-shrimp/docker_image_pusher](https://github.com/tech-shrimp/docker_image_pusher) to pull images from DockerHub and push to my own Aliyun for fully public use!
+
+If you don't know how to use the repository above, just modify the `images.txt` in this repo: [docker_image_pusher](https://github.com/JasonkayZK/docker_image_pusher).
+
+And i will provide the image urls for you!
+
+> And the images in this repo's scripts will be all replaced to my own Aliyun.
